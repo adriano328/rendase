@@ -12,7 +12,7 @@ const routes: Routes = [
       {
         path: 'clients',
         canActivate: [AuthGuard],
-        loadChildren: () => import('../../modules/location/cliente.module').then(m => m.ClientesModule)
+        loadChildren: () => import('../../modules/client-register/cliente.module').then(m => m.ClientesModule)
       },
     ]
   }
