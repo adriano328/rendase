@@ -1,0 +1,28 @@
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+@import "assets/styles/variables";
+@import "primeicons/primeicons.css";
+
+body {
+  font-family: var(--fontFamily);
+  //background-color: var(--primaryColor);
+  background-color: var(--darkColor);
+  color: var(--textColor);
+
+  margin: 0;
+  padding: 0;
+  transition: all .3s;
+}
+
+.p-color {
+  color: var(--primaryColor) !important;
+}
+
+.d-color {
+  color: var(--textColorDark) !important;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}

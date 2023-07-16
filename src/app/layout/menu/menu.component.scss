@@ -1,0 +1,33 @@
+::ng-deep .app-menu {
+  .menu-label {
+    font-size: .7rem;
+    font-weight: 900;
+    color: #fff !important;
+    line-height: 1.3rem;
+    text-transform: uppercase;
+  }
+
+
+  &.hidenav {
+    .menu-label {
+      display: none;
+    }
+
+    .p-tieredmenu {
+      ul {
+        width: 27px;
+      }
+      .p-submenu-list {
+        width: 150px;
+      }
+    }
+  }
+}
+
+::ng-deep .p-tieredmenu .p-menuitem-link .p-menuitem-text {
+  font-size: 13px;
+}
+
+::ng-deep .p-tieredmenu .p-menuitem-link .p-menuitem-icon {
+  font-size: 13px;
+}

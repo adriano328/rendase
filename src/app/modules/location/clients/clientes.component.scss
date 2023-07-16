@@ -1,0 +1,176 @@
+::ng-deep .app-locations {
+  .fc-day {
+    cursor: pointer;
+  }
+
+  .p-dialog-content {
+    overflow: initial;
+  }
+
+  .search-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .container-input {
+      width: 50%;
+
+      i {
+        margin-top: -0.6em;
+      }
+
+      input {
+        margin-top: 0.2em;
+        font-size: 14px;
+      }
+
+      ::ng-deep .p-input-icon-right,
+      .p-input-icon-right>.p-inputtext {
+        width: 100%;
+        border-radius: 25px;
+        height: 2.5em;
+      }
+    }
+
+    .button-container {
+      margin-left: 1em;
+
+      ::ng-deep .p-button {
+        background-color: var(--colorButton);
+        height: 2.3em;
+        border: none;
+      }
+
+      ::ng-deep .p-button .p-button-label,
+      .p-button .p-button-icon-left {
+        color: var(--textColor);
+        font-size: 9px;
+      }
+    }
+  }
+
+  .table-container {
+    ::ng-deep .p-datatable .p-datatable-thead>tr>th {
+      padding: 0.5em;
+      border: 1px solid #dee2e6;
+      font-size: 13px;
+    }
+
+    ::ng-deep .p-datatable .p-datatable-tbody>tr>td {
+      padding: 0.5em;
+      border-bottom: 1px solid #dee2e6;
+      font-size: 13px;
+    }
+
+    .button-option {
+      ::ng-deep .p-button {
+        margin-right: 0.5em;
+        width: 30px;
+        height: 30px;
+      }
+    }
+
+    ::ng-deep ::ng-deep .p-dropdown {
+      height: 2em;
+    }
+
+    ::ng-deep .p-paginator .p-dropdown .p-dropdown-label {
+      margin-top: -0.5em;
+      font-size: 13px;
+    }
+
+    ::ng-deep .p-dropdown-panel .p-dropdown-items .p-dropdown-item {
+      font-size: 13px;
+    }
+
+  }
+
+  @media (max-width: 767px) {
+    .p-dialog {
+      width: 100vw !important;
+      height: 90vh !important;
+    }
+  }
+}
+
+.container-cadastro {
+
+  .label-style {
+    font-size: 13px;
+  }
+
+  ::ng-deep .p-inputtext {
+    width: 100%;
+    height: 2em;
+    border-radius: 3px;
+    font-size: 13px;
+  }
+
+  ::ng-deep .p-dropdown {
+    width: 100%;
+    height: 1.6em;
+    border-radius: 3px;
+  }
+
+  ::ng-deep .p-dropdown .p-dropdown-label {
+    font-size: 14px;
+    margin-top: -0.7em;
+  }
+
+  ::ng-deep .p-dropdown-panel .p-dropdown-items .p-dropdown-item {
+    font-size: 12px;
+  }
+
+  .container-button-dialog {
+    margin-top: 1em;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+
+    ::ng-deep .p-button {
+      height: 2em;
+      border-radius: 3px;
+    }
+
+    ::ng-deep .p-button .p-button-label {
+      color: var(--textColor);
+      font-size: 11px;
+    }
+
+    ::ng-deep .p-button .p-button-icon-left {
+      color: var(--textColor);
+    }
+  }
+}
+
+::ng-deep .p-dialog .p-dialog-header .p-dialog-title {
+  font-size: 1rem;
+}
+
+::ng-deep .p-button .p-button-label {
+  color: white;
+  font-size: 13px;
+}
+
+.paginator {
+
+  ::ng-deep ::ng-deep .p-dropdown {
+    height: 2em;
+  }
+
+  ::ng-deep .p-paginator .p-dropdown .p-dropdown-label {
+    margin-top: -0.5em;
+    font-size: 13px;
+  }
+
+  ::ng-deep .p-dropdown-panel .p-dropdown-items .p-dropdown-item {
+    font-size: 13px;
+  }
+
+  ::ng-deep .p-paginator .p-paginator-pages .p-paginator-page {
+    font-size: 13px;
+  }
+
+}

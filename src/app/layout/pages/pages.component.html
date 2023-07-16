@@ -1,0 +1,86 @@
+<div class="app-pages">
+  <div *ngIf="isLogged; else login" id="wrapper">
+    <aside class="aside-menu" [class.expanded]="hideSidenav">
+      <div class="row">
+        <div class="logo">
+        </div>
+        <div class="flex gap-3">
+          <div class="config" (click)="op.toggle($event)">
+            <i class="fa fa-cog"></i>
+            <p-overlayPanel #op>
+              <div class="panel-user">
+                <span>Entrou como</span>
+                <span>{{user.email}}</span>
+                <hr/>
+                <div class="logout">
+                  <i class="fa-solid fa-right-from-bracket"></i> Sair da conta
+                </div>
+              </div>
+            </p-overlayPanel>
+          </div>
+          <div class="close" *ngIf="hideSidenav" (click)="hideSidenav = !hideSidenav">
+            <i class="fa fa-times"></i>
+          </div>
+        </div>
+      </div>
+      <div class="user-info">
+        <div class="user-image">
+          <img src="assets/images/logo-principal.png">
+        </div>
+      </div>
+      <app-menu [hideSidenav]="hideSidenav"></app-menu>
+    </aside>
+
+    <main class="page-content" [class.expanded]="hideSidenav">
+      <header>
+        <div class="flex">
+          <div class="menu-icon" [class.active]="!hideSidenav"
+               (click)="hideSidenav = !hideSidenav"
+               [pTooltip]="hideSidenav ? 'Expandir menu' : 'Recolher Menu'">
+            <span></span><span></span><span></span>
+          </div>
+          <app-breadcrumb></app-breadcrumb>
+        </div>
+        <div class="flex">
+          <div class="py-3 px-2 mr-2" (click)="themePanel.toggle($event)" tooltipPosition="left"
+               pTooltip="Alterar tema">
+            <i class="fa-solid fa-brush text-lg cursor-pointer hover:text-color-secondary"></i>
+            <p-overlayPanel #themePanel [showCloseIcon]="true">
+              <h3>Escolha o tema</h3>
+              <hr/>
+              <div class="themes flex gap-2 flex-wrap">
+                <div class="theme-item" [class.active]="item.active"
+                      (click)="changeTheme(item)"
+                     [ngStyle]="{'background-color': calculeHslBackground(item.code)}"
+                     *ngFor="let item of themes">
+                </div>
+              </div>
+            </p-overlayPanel>
+          </div>
+          <div class="py-3 px-2" (click)="toggleFullscreen()" tooltipPosition="left"
+               [pTooltip]="(fullscreen ? 'Desabilitar' : 'Habilitar') + ' tela cheia'">
+            <i class="fa-solid text-lg cursor-pointer hover:text-color-secondary"
+               [ngClass]="fullscreen ? 'fa-compress' : 'fa-expand'">
+            </i>
+          </div>
+          <div class="p-3 mr-3" (click)="toggleTheme()" tooltipPosition="left"
+               [pTooltip]="'Habilitar tema ' + (darkTheme ? 'claro' : 'escuro')">
+            <i class="fa text-lg cursor-pointer hover:text-color-secondary"
+               [ngClass]="darkTheme ? 'fa-sun' : 'fa-moon'"></i>
+          </div>
+        </div>
+      </header>
+      <div class="main-content">
+        <router-outlet></router-outlet>
+      </div>
+    </main>
+  </div>
+
+  <ng-template #login>
+    <router-outlet></router-outlet>
+  </ng-template>
+  <p-progressSpinner *ngIf="loading"></p-progressSpinner>
+  <p-toast [ngStyle]="{'position':'relative', 'z-index':'99999999'}" styleClass="pre-wrap-toast"
+           position="top-right"></p-toast>
+  <p-confirmDialog icon="pi pi-exclamation-triangle" key="deleteConfirm"></p-confirmDialog>
+</div>

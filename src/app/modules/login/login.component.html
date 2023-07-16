@@ -1,0 +1,25 @@
+<div class="app-login">
+  <div class="container-login">
+    <div class="flex justify-content-center align-items-center">
+      <div class="flex align-items-center justify-content-center container-logo">
+        <p-image src="/assets/images/logo-principal.png" alt="Image" width="150"></p-image>
+      </div>
+    </div>
+    <form [formGroup]="formLogin" class="input-container flex h-full md:px-6 flex-column mt-4">
+      <div class="text-left w-full">
+        <label for="username" class="label-style">Usuário *</label>
+        <span class="p-input-icon-right w-full mt-2">
+          <i class="fa-solid fa-user"></i>
+          <input id="username" class="w-full" type="text" pInputText formControlName="username" />
+        </span>
+      </div>
+      <div class="text-left w-full">
+        <label class="label-style">Senha *</label>
+        <div class="card flex justify-content-center w-full mt-2">
+          <p-password class="w-full" [toggleMask]="true" formControlName="password"></p-password>
+        </div>
+      </div>
+      <p-button label="Logar-se" styleClass="p-button-rounded" routerLink="/pages/clients"></p-button>
+    </form>
+  </div>
+</div>

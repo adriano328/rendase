@@ -1,0 +1,43 @@
+<div class="flex flex-column justify-content-center align-items-center mt-4 container-view-location">
+    <div class="dates-location">
+        <form [formGroup]="clienteForm">
+            <div class="grid">
+                <div class="flex flex-column col-12 md:col-12 lg:col-8">
+                    <label class="label-style">Nome Completo:</label>
+                    <input type="text" formControlName="nome" pInputText />
+                </div>
+                <div class="flex flex-column col-12 md:col-12 lg:col-4">
+                    <label class="label-style">CPF:</label>
+                    <p-inputMask mask="999.999.999-99" [unmask]="true" formControlName="cpf"></p-inputMask>
+                </div>
+                <div class="flex flex-column col-12 md:col-12 lg:col-9">
+                    <label class="label-style">Logradouro:</label>
+                    <input type="text" formControlName="logradouro" pInputText />
+                </div>
+                <div class="flex flex-column col-12 md:col-12 lg:col-3">
+                    <label class="label-style">N°:</label>
+                    <input type="text" formControlName="numero" pInputText />
+                </div>
+                <div class="flex flex-column col-12 md:col-12 lg:col-7">
+                    <label class="label-style">Bairro:</label>
+                    <input type="text" formControlName="bairro" pInputText />
+                </div>
+                <div class="flex flex-column col-12 md:col-12 lg:col-5">
+                    <label class="label-style">Cidade:</label>
+                    <p-dropdown [options]="cidade" formControlName="cidade" placeholder="Selecione"
+                        optionLabel="nome" optionValue="id"></p-dropdown>
+                </div>
+                <div class="flex flex-column col-12 md:col-12 lg:col-5">
+                    <label class="label-style">Contato:</label>
+                    <p-inputMask [unmask]="true" mask="(99) 9999-9999" formControlName="contato"></p-inputMask>
+                </div>
+                <div class="flex flex-column col-12 md:col-12 lg:col-7">
+                    <div class="button">
+                        <p-button icon="pi pi-save" label="Salvar" styleClass="p-button-help" (onClick)="updateCliente()"></p-button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <p-toast></p-toast>
+    <p-confirmDialog header="Confirmação" icon="pi pi-exclamation-triangle"></p-confirmDialog>

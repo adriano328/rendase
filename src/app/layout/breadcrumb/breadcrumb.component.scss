@@ -1,0 +1,15 @@
+::ng-deep .app-breadcrumb {
+  .p-breadcrumb {
+    background: transparent;
+    border:none;
+    border-radius: 6px;
+    padding: 1rem;
+    font-size: .8rem;
+
+    ul li .p-menuitem-link {
+      transition: all .2s;
+      &:focus { box-shadow: none; }
+      &:hover { font-weight: 600; }
+    }
+  }
+}

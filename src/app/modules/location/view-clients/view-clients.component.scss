@@ -1,0 +1,56 @@
+.container-view-location {
+    width: 100%;
+
+    .label-style {
+        color: black;
+    }
+
+    .dates-location {
+        width: 50%;
+
+        .label-style {
+            font-size: 13px;
+        }
+
+        input {
+            height: 1.9em;
+            border-radius: 3px;
+            font-size: 13px;
+        }
+    }
+
+    ::ng-deep .p-inputtext {
+        width: 100%;
+        height: 2em;
+        border-radius: 3px;
+        font-size: 13px;
+    }
+
+    ::ng-deep .p-dropdown {
+        width: 100%;
+        height: 1.6em;
+        border-radius: 3px;
+    }
+
+    ::ng-deep .p-dropdown .p-dropdown-label {
+        font-size: 14px;
+        margin-top: -0.7em;
+    }
+
+    ::ng-deep .p-dropdown-panel .p-dropdown-items .p-dropdown-item {
+        font-size: 12px;
+    }
+
+    .button {
+        height: 100%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        ::ng-deep .p-button {
+            border-radius: 3px;
+            height: 2.3em;
+            font-size: 13px;
+        }
+    }
+
+}

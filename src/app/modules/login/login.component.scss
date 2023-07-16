@@ -1,0 +1,69 @@
+::ng-deep .app-login {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  * {
+    transition: .3s all;
+  }
+  .container-login {
+    width: 300px;
+    height: 65%;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 0.2em 0.2em;
+    text-align: center;
+    background: var(--containerBgCard);
+    border-radius: var(--borderRadius);
+
+    .container-logo {
+      margin-top: 1.5em;
+      width: 70%;
+      height: 5rem;
+      border-radius: 10px;
+    }
+
+    .input-container {
+        
+      .label-style {
+        font-size: 0.7rem;
+        color: #000;
+      }
+
+      .p-input-icon-right > .p-inputtext {
+        height: 2rem;
+        width: 100%;
+      }
+  
+      .p-password {
+        width: 100%;
+        .p-inputtext {
+          width: 100%;
+          height: 2rem;
+        }
+      }
+      p-button, p-button .p-button {
+        width: 100%;
+        margin-top: 1em;
+      }
+
+    }
+  }
+
+  @media (max-width: 768px) {
+    .container-login {
+      margin: .5rem;
+      width: calc(100% - 1rem);
+      height: calc(100% - 1rem);
+    }
+  }
+
+  @media (min-width: 1400px) {
+    .container-login {
+      width: 380px !important;
+      height: 45% !important;
+    }
+  }
+}
