@@ -114,7 +114,6 @@ export class ClientesComponent implements OnInit {
 
   openLocation() {
     this.viewCliente = true;
-    this.cadastroform.controls['estado'].setValue('Mato Grosso - MT');
   }
 
   confirm(clienteid: number) {

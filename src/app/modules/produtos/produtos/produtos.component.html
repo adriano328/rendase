@@ -1,0 +1,108 @@
+<div class="app-produto">
+    <div class="search-container">
+      <div class="flex justify-content-center container-input">
+        <form [formGroup]="formSearchProduto">
+          <div class="grid">
+            <div class="flex flex-column col-12 md:col-12 lg:col-2">
+            <label for="descricao" class="label-description">Descrição:</label>
+            <input type="text" id="descricao" formControlName="descricao" pInputText />
+            </div>
+            <div class="flex flex-column col-12 md:col-12 lg:col-2">
+              <label for="categoria" class="label-description">Categoria:</label>
+              <p-dropdown [options]="categoriaList" id="categoria" placeholder="Selecione" class="w-full" optionLabel="descricao"></p-dropdown>
+            </div>
+            <div class="flex flex-column col-12 md:col-12 lg:col-2">
+              <label for="cor" class="label-description">Cor:</label>
+              <p-dropdown [options]="corList" id="cor" class="w-full" placeholder="Selecione" optionLabel="value"></p-dropdown>
+            </div>
+            <div class="flex flex-column col-12 md:col-12 lg:col-2">
+              <label for="cor" class="label-description">Tamanho:</label>
+              <p-dropdown [options]="tamanhoList" id="cor" class="w-full" placeholder="Selecione" optionLabel="value"></p-dropdown>
+            </div>
+             <div class="flex flex-row justify-content-space-between col-12 md:col-12 lg:col-4 mt-2">
+              <div class="flex align-items-center mr-2">
+                <p-radioButton name="pizza" value="Cheese" inputId="ingredient1"></p-radioButton>
+                <label for="ingredient1" class="label-description ml-2">Masculino</label>
+            </div>
+            <div class="flex align-items-center mr-3">
+              <p-radioButton name="pizza" value="Cheese" inputId="ingredient1"></p-radioButton>
+              <label for="ingredient1" class="label-description ml-2">Feminino</label>
+          </div>
+          <div class="button-container mt-2">
+            <p-button icon="pi pi-plus" styleClass="p-button-rounded p-button-help" (onClick)="openDialog()"></p-button>
+          </div>
+            </div>
+         </div>
+        </form>
+      </div>
+    </div>
+    <div class="flex justify-content-center table-container mt-4">
+      <p-table [value]="[]" [tableStyle]="{ 'width': '65rem' }" [rows]="">
+        <ng-template pTemplate="header">
+            <tr>
+                <th style="width: 8%; text-align: center;">Código</th>
+                <th style="width: 20%; text-align: center">Produto</th>
+                <th style="text-align: center; width: 14%">Categoria</th>
+                <th style="width: 14%; text-align: center">Cor</th>
+                <th style="width: 14%; text-align: center">Preço</th>
+                <th style="width: 14%; text-align: center">Tamanho</th>
+                <th style="width: 14%; text-align: center">Sexo</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-cliente>
+            <tr>
+                <td style="text-align: center;">{{ cliente.id }}</td>
+                <td>{{ cliente.nome }}</td>
+                <td style="text-align: center;">{{ cliente.contato }}</td>
+                <td>
+                  <div class="flex justify-content-center table-container button-option">
+                    <p-button icon="pi pi-pencil" styleClass="p-button-rounded p-button-help" routerLink="view-location" routerLink="view-client/{{cliente.id}}"></p-button>
+                    <p-button icon="pi pi-eye" styleClass="p-button-rounded p-button-warning" routerLink="view-location"></p-button>
+                    <p-button icon="pi pi-trash" styleClass="p-button-rounded" (onClick)="confirm(cliente.id)"></p-button>
+                  </div>
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
+    </div>
+    <div class="paginator">
+      <p-paginator (onPageChange)="filterProdutos($event)" [first]="paginationFirstValue" [totalRecords]="totalElements" [rows]="5" [rowsPerPageOptions]="[5, 10, 20]" #pp></p-paginator>
+    </div>
+  </div>
+  <p-dialog header="Cadastro de Cliente" [(visible)]="viewProduto" [style]="{width: '42vw'}">
+    <div class="container-cadastro">
+      <form [formGroup]="cadastroProdutoForm">
+        <div class="grid">
+          <div class="flex flex-column col-12 md:col-12 lg:col-8">
+            <label class="label-style">Produto:</label>
+            <input type="text" formControlName="produto" pInputText />
+          </div>
+          <div class="flex flex-column col-12 md:col-12 lg:col-4">
+            <label class="label-style">Categoria:</label>
+            <p-inputMask mask="999.999.999-99" [unmask]="true" formControlName="categoria"></p-inputMask>
+          </div>
+          <div class="flex flex-column col-12 md:col-12 lg:col-9">
+            <label class="label-style">Cor:</label>
+            <input type="text" formControlName="cor" pInputText />
+          </div>
+          <div class="flex flex-column col-12 md:col-12 lg:col-3">
+            <label class="label-style">Preço:</label>
+            <input type="text" formControlName="preco" pInputText />
+          </div>
+          <div class="flex flex-column col-12 md:col-12 lg:col-7">
+            <label class="label-style">Tamanho:</label>
+            <input type="text" formControlName="tamanho" pInputText />
+          </div>
+          <div class="flex flex-column col-12 md:col-12 lg:col-5">
+            <label class="label-style">sexo:</label>
+            <p-inputMask [unmask]="true" mask="(99) 9999-9999" formControlName="sexo"></p-inputMask>
+          </div>
+          <div class="col-12 container-button-dialog">
+            <p-button icon="pi pi-save" label="Salvar" (onClick)="cadastroProduto()"></p-button>
+          </div>
+        </div>
+      </form>
+      </div>
+  </p-dialog>
+  <p-toast></p-toast>
+  <p-confirmDialog header="Confirmação" icon="pi pi-exclamation-triangle"></p-confirmDialog>

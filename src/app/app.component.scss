@@ -1,0 +1,21 @@
+::ng-deep .p-dropdown,
+::ng-deep .p-inputtext {
+    width: 100% !important;
+    height: 2.1em;
+    border-radius: 3px;
+}
+
+::ng-deep .p-dropdown .p-dropdown-label {
+    margin-top: -0.5em;
+    font-size: 14px;
+}
+
+::ng-deep .p-dropdown-panel .p-dropdown-items .p-dropdown-item {
+    font-size: 13px;
+}
+
+::ng-deep .p-datatable .p-datatable-thead > tr > th {
+    padding: 0.5em;
+    font-size: 13px;
+    border: 1px solid #cecece;
+}

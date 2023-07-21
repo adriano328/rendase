@@ -21,7 +21,7 @@ export class MenuComponent {
       {
         label: 'Produtos',
         icon: 'fa fa-box',
-        routerLink: 'clients'
+        routerLink: 'produtos'
       },
       {
         separator: true
