@@ -3,7 +3,7 @@
       <div class="flex justify-content-center container-input">
         <form [formGroup]="formSearchProduto">
           <div class="grid">
-            <div class="flex flex-column col-12 md:col-12 lg:col-2">
+            <div class="flex flex-column col-12 md:col-12 lg:col-3">
             <label for="descricao" class="label-description">Descrição:</label>
             <input type="text" id="descricao" formControlName="descricao" pInputText />
             </div>
@@ -19,7 +19,7 @@
               <label for="cor" class="label-description">Tamanho:</label>
               <p-dropdown [options]="tamanhoList" id="cor" class="w-full" placeholder="Selecione" optionLabel="value"></p-dropdown>
             </div>
-             <div class="flex flex-row justify-content-space-between col-12 md:col-12 lg:col-4 mt-2">
+             <div class="flex flex-row justify-content-space-between col-12 md:col-12 lg:col-3 mt-2">
               <div class="flex align-items-center mr-2">
                 <p-radioButton name="pizza" value="Cheese" inputId="ingredient1"></p-radioButton>
                 <label for="ingredient1" class="label-description ml-2">Masculino</label>
