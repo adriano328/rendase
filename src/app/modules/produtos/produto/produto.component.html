@@ -1,0 +1,47 @@
+<div class="flex justify-content-center app-produto-cadastro w-full">
+    <div class="flex justify-content-center container-input mt-5">
+        <form [formGroup]="formProduto">
+            <div class="grid">
+                <div class="flex flex-column col-12 md:col-12 lg:col-6">
+                  <label class="label-style">Produto:</label>
+                  <input type="text" formControlName="produto" pInputText />
+                </div>
+                <div class="flex flex-column col-12 md:col-12 lg:col-3">
+                  <label class="label-style">Categoria:</label>
+                  <p-dropdown [options]="categoriaList" id="categoria" placeholder="Selecione" formControlName="categoria"
+                  optionValue="id" class="w-full" optionLabel="descricao"></p-dropdown>
+                </div>
+                <div class="flex flex-column col-12 md:col-12 lg:col-3">
+                  <label class="label-style">Cor:</label>
+                  <p-dropdown [options]="corList" id="cor" class="w-full" formControlName="cor" placeholder="Selecione"
+                  optionLabel="value" optionValue="value"></p-dropdown>
+                </div>
+                <div class="flex flex-column col-12 md:col-12 lg:col-2">
+                  <label class="label-style">Preço:</label>
+                  <p-inputNumber formControlName="preco" inputId="locale-us" mode="decimal" locale="en-US" [minFractionDigits]="2"> </p-inputNumber>
+                  <!-- <input type="text" formControlName="preco" (input)="formatPrice()" pInputText /> -->
+                </div>
+                <div class="flex flex-column col-12 md:col-12 lg:col-3">
+                  <label class="label-style">Tamanho:</label>
+                  <p-dropdown [options]="tamanhoList" id="cor" class="w-full" formControlName="tamanho"
+                  placeholder="Selecione" optionLabel="value" optionValue="value"></p-dropdown>
+                </div>
+                <div class="flex flex-row justify-content-space-between col-12 md:col-3 lg:col-4 mt-3">
+                    <div class="flex align-items-center mr-2">
+                      <p-radioButton name="sexo" value="Masculino" formControlName="sexo" inputId="Masculino"></p-radioButton>
+                      <label for="Masculino" class="label-style ml-2">Masculino</label>
+                    </div>
+                    <div class="flex align-items-center mr-3">
+                      <p-radioButton name="sexo" value="Feminino" formControlName="sexo" inputId="Masculino"></p-radioButton>
+                      <label for="Masculino" class="label-style ml-2">Feminino</label>
+                    </div>
+                </div>
+                <div class="flex flex-column col-12 md:col-12 lg:col-3">
+                  <div class="flex justify-content-end mt-3 container-button-dialog">
+                    <p-button icon="pi pi-save" styleClass="p-button-raised p-button-help" class="button-save" label="Salvar" (onClick)="registerProduct()"></p-button>
+                  </div>
+                </div>
+              </div>
+        </form>
+      </div>
+</div>

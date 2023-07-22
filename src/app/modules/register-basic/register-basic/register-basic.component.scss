@@ -1,0 +1,45 @@
+* {
+    color: black;
+}
+
+.container-register-basics {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    .container-search {
+
+        .button-container {
+
+            ::ng-deep .p-button {
+                width: 30px;
+                height: 30px;
+            }
+        }
+        
+        .drop {
+            font-size: 13px;
+            justify-content: center;
+        }
+
+    }
+
+    .table-container {
+    }
+}
+
+.container-cadastro {
+
+    .label-style {
+        font-size: 13px;
+    }
+
+    .container-button-dialog {
+
+        ::ng-deep .p-button {
+            height: 2.5em;
+            width: 8em;
+            font-size: 13px;
+        }
+    }
+}

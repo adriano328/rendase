@@ -1,5 +1,5 @@
-import {Component, Input} from '@angular/core';
-import {MenuItem} from "primeng/api";
+import { Component, Input } from '@angular/core';
+import { MenuItem } from "primeng/api";
 
 @Component({
   selector: 'app-menu',
@@ -21,7 +21,23 @@ export class MenuComponent {
       {
         label: 'Produtos',
         icon: 'fa fa-box',
-        routerLink: 'produtos'
+        items: [
+          {
+            label: 'Produtos',
+            icon: 'fa fa-box',
+            routerLink: 'produtos'
+          },
+          {
+            label: 'Cadastro de Produtos',
+            icon: 'fa fa-box',
+            routerLink: 'produtos/produto'
+          },
+        ]
+      },
+      {
+        label: 'Cadastros Básicos',
+        icon: 'pi pi-microsoft',
+        routerLink: 'register-basic'
       },
       {
         separator: true
@@ -29,7 +45,7 @@ export class MenuComponent {
       {
         label: 'Sair',
         icon: 'pi pi-fw pi-power-off',
-        routerLink:'/auth'
+        routerLink: '/auth'
       }
     ];
   }

@@ -18,6 +18,11 @@ const routes: Routes = [
         path: 'produtos',
         canActivate: [AuthGuard],
         loadChildren: () => import('../../modules/produtos/produtos.module').then(m => m.ProdutosModule)
+      },
+      {
+        path: 'register-basic',
+        canActivate: [AuthGuard],
+        loadChildren: () => import('../../modules/register-basic/register-basic.module').then(m => m.RegisterBasicModule)
       }
     ]
   }

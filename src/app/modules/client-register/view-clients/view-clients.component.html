@@ -27,11 +27,11 @@
                     <p-dropdown [options]="cidade" formControlName="cidade" placeholder="Selecione"
                         optionLabel="nome" optionValue="id"></p-dropdown>
                 </div>
-                <div class="flex flex-column col-12 md:col-12 lg:col-5">
+                <div class="flex flex-column col-12 md:col-12 lg:col-5 mt-1">
                     <label class="label-style">Contato:</label>
                     <p-inputMask [unmask]="true" mask="(99) 9999-9999" formControlName="contato"></p-inputMask>
                 </div>
-                <div class="flex flex-column col-12 md:col-12 lg:col-7">
+                <div class="flex flex-column col-12 md:col-12 lg:col-7 mt-3">
                     <div class="button">
                         <p-button icon="pi pi-save" label="Salvar" styleClass="p-button-help" (onClick)="updateCliente()"></p-button>
                     </div>

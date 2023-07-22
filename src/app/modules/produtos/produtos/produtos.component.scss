@@ -21,6 +21,17 @@
             }
 
         }
+    }
 
+    .table-container {
+        width: 100%;
+
+        .button-option {
+
+            ::ng-deep .p-button {
+                width: 30px;
+                height: 30px;
+            }
+        }
     }
 }

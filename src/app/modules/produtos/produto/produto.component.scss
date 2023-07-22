@@ -1,0 +1,22 @@
+* {
+    color: black;
+}
+
+.app-produto-cadastro {
+
+    .container-input {
+        width: 50vw;
+    }
+
+    .label-style {
+        font-size: 13px;
+        margin-bottom: 0.3em;
+    }
+    
+    .container-button-dialog {
+        ::ng-deep .p-button {
+            font-size: 13px;
+            height: 2.5em;
+        }
+    }
+}

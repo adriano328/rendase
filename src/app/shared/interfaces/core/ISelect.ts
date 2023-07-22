@@ -1,3 +1,4 @@
 export interface ISelect {
-    value: number | string,
+    value?: number | string,
+    descricao?: string;
 }
