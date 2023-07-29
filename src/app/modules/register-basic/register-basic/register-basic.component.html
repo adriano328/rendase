@@ -1,9 +1,9 @@
 <div class="flex justify-content-center flex-column container-register-basics w-full">
     <div class="flex justify-content-center container-search w-full">
       <div class="flex justify-content-center grid w-full">
-        <div class="flex flex-row justify-content-center col-12 md:col-12 lg:col-6">
+        <div class="flex flex-row justify-content-center col-12 md:col-12 lg:col-12">
           <div class="drop">
-            <label class="label-style mb-2">Tipo de Cadastro Básico</label>
+            <label class="label-style" style="text-align: center;">Tipo de Cadastro Básico</label>
             <p-dropdown [options]="tipoCadastro" id="categoria" placeholder="Selecione" class="w-full" optionLabel="descricao" [(ngModel)]="pesquisa" (ngModelChange)="viewFilterRegister()"></p-dropdown>
           </div>
           <div class="flex flex-column align-items-left justify-content-center button-container col-12 md:col-12 lg:col-1 mt-2">

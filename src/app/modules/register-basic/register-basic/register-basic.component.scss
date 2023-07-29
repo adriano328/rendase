@@ -16,15 +16,14 @@
                 height: 30px;
             }
         }
-        
+
         .drop {
+            width: 300px;
+            display: flex;
+            flex-direction: column;
             font-size: 13px;
             justify-content: center;
         }
-
-    }
-
-    .table-container {
     }
 }
 
